@@ -17,16 +17,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Do all of your work inside the document.addEventListener  
 
   // Part 1
+  const mainTitle = document.getElementById('main-title')
+  mainTitle.innerText = 'this is dome';
 
 
   // Part 2
-
+const Body = document.querySelector('body')
+Body.style.backgroundColor= 'pink'; 
 
   // Part 3
-
+const favUl = document.querySelector("ul");
+favUl.lastElementChild.remove("favUl.lastElementChild");
+console.log(favUl);
 
   // Part 4
-
+const subTitle = document.querySelectorAll('.special-title');
+subTitle.forEach(el => el.style.fontSize = '2rem');
+console.log(subTitle);
 
   // Part 5
 
