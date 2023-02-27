@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Part 2
 const Body = document.querySelector('body')
 Body.style.backgroundColor= 'pink'; 
+console.log(Body);
 
   // Part 3
 const favUl = document.querySelector("ul");
@@ -36,10 +37,16 @@ subTitle.forEach(el => el.style.fontSize = '2rem');
 console.log(subTitle);
 
   // Part 5
-
+const pastRaces = document.getElementById('past-races');
+pastRaces.children[3].remove()
+console.log(pastRaces.children[3]);
 
   // Part 6
-
+  const newLi = document.createElement('li');
+  newLi.textContent="Japan";
+  console.log(newLi);
+pastRaces.appendChild(newLi);
+console.log(pastRaces);
 
   // Part 7
 
