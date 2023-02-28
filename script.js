@@ -42,21 +42,46 @@ pastRaces.children[3].remove()
 console.log(pastRaces.children[3]);
 
   // Part 6
-  const newLi = document.createElement('li');
-  newLi.textContent="Japan";
-  console.log(newLi);
+const newCityName = 'Paris';
+const newLi = document.createElement('li');
+newLi.textContent = newCityName;
+console.log(newLi);
 pastRaces.appendChild(newLi);
 console.log(pastRaces);
 
-  // Part 7
+// Part 7
+function createNewBlogPost(cityName) {
+  const newDiv = document.createElement('div');
+  newDiv.className = 'blog-post purple';
+  const newHeader = document.createElement('h1');
+  newHeader.innerText = cityName;
+  const newH2 = document.createElement('h2');
+  newH2.innerText = `Heading for ${cityName}`;
+  const newP = document.createElement('p');
+  newP.innerText = 'Lorem ipsum and what not and other stuffLorem ipsum and what not and other stuff';
+  newDiv.appendChild(newHeader);
+  newDiv.appendChild(newH2);
+  newDiv.appendChild(newP);
+  document.getElementById('dom-adventures').insertAdjacentElement('afterend', newDiv);
+}
 
+createNewBlogPost(newCityName);
 
-  // Part 8
+// Part 8
+const quoteTitle = document.querySelector('#quote-title');
+quoteTitle.addEventListener('click', randomQuote);
 
-
-  // Part 9
-
-
-
-
+// Part 9
+const blogPosts = document.querySelectorAll('.blog-post');
+console.log(blogPosts);
+blogPosts.forEach(post => {
+  post.addEventListener('mouseleave', (e) => {
+    console.log('LEAVING');
+togglePost(e.target)
+  });
+  post.addEventListener('mouseenter', (e) => {
+    console.log('ENTERED');
+togglePost(e.target)
+  });
+});
 });
